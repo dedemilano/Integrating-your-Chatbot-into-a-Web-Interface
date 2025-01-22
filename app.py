@@ -1,4 +1,4 @@
-from flask import Flask ,request
+from flask import Flask ,request ,render_template
 import json
 from flask_cors import CORS
 
@@ -17,7 +17,7 @@ CORS(app)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return render_template('index.html')
 
 @app.route('/chat', methods=['POST'])
 def handle_prompt():
